@@ -33,3 +33,15 @@ See the explanation video for more details.
 7. The user can double click the issue to see more details.
 8. The `Reload Issues` button will fetch new issues from Google Sheets.
 9. The Menu contains more options, including the ability to export or import from JSON, so that the user may work offline.
+
+## A Note on User Privacy
+
+The CATS program makes use of 2 Google APIs for Google Sheets and for Gmail. CATS only uses the Gmail API and the associated permissions to fetch the name of the user (e.g. “John Doe”).
+
+The Google+ API was previously used for this functionality, but it has since been removed since the Google+ service will be shut down in April 2019. The Gmail API replaced the Google+ API in CATS.
+
+It is important to note that at no point does CATS access the user’s email inbox, or other emails.
+
+CATS also has no connectivity back to a central server of any kind (no analytics, advertisement tracking, etc.). So even if it were accessing inboxes (which it is not), there would be nowhere to send that data.
+
+The only online service that CATS uploads data to is Google Sheets. The only Google Sheet that CATS can modify is the one specified via the URL provided by the user during the login sequence.
