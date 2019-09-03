@@ -1,0 +1,167 @@
+JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "fill,hidemode 3"
+			"$columnConstraints": "[fill][50:n,grow,fill][100:n,grow,shrink 0,fill][75:n,grow,shrink 0,right]"
+			"$rowConstraints": "[]0[]0[][][grow,fill][]"
+		} ) {
+			name: "mainWindow"
+			"visible": true
+			"title": "Cyber Activity Tracking System (CATS)"
+			"minimumSize": new java.awt.Dimension( 685, 485 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "catsLabel"
+				"text": "Cyber Activity Tracking System (CATS)"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,align left center,grow 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "reloadButton"
+				"text": "Reload Issues"
+				"enabled": false
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "reloadButtonActionPerformed", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1,alignx left,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "loginButton"
+				"text": "Login to Google"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "loginButtonActionPerformed", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "onlineOfflineStatusLabel"
+				"text": "Working in Offline Mode"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "loadingLabel"
+				"text": "No data download in progress."
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2,alignx left,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "googleEmailLabel"
+				"text": "Not Signed Into Google"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 2,alignx right,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "priorityFileLabel"
+				"text": "No High Priority Words File Selected"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 3 4 1"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane"
+				"verticalScrollBarPolicy": 22
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "issueTable"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+						add( new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( true )
+						} )
+					}, new java.util.Vector {
+						add( "Issue Title" )
+						add( "Priority" )
+						add( "Time Submitted" )
+						add( "Location" )
+						add( "Issue Addressed?" )
+					}, new java.util.Vector {
+						add( class java.lang.String )
+						add( class java.lang.String )
+						add( class java.util.Date )
+						add( class java.lang.String )
+						add( class java.lang.Boolean )
+					}, new java.util.Vector {
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+						add( true )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "issueTableMouseClicked", true ) )
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 4 4 1,growx"
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu"
+					"text": "Menu"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuChooseSpreadsheet"
+						"text": "Choose Google Spreadsheet"
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuChooseSpreadsheetActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator1"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuSelectPriorityFile"
+						"text": "Select High Priority Words File"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuSelectPriorityFileActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator2"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuExportHumanText"
+						"text": "Export to Human Readable Text File"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuExportHumanTextActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuExportJSON"
+						"text": "Export to JSON File"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuExportJSONActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuImportJSON"
+						"text": "Import from JSON File"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuImportJSONActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator3"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuUploadData"
+						"text": "Upload Data to Google Spreadsheet"
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuUploadDataActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuExitUpload"
+						"text": "Upload Changes and Exit"
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuExitUploadActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuExit"
+						"text": "Exit Without Uploading Changes"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuExitActionPerformed", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 715, 520 )
+		} )
+	}
+}
